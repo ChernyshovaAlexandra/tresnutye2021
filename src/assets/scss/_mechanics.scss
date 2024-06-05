@@ -1,0 +1,281 @@
+.mechanics {
+    position: relative;
+    overflow: hidden;
+
+    .uslovia {
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width: 1000px) {
+            max-width: 90%;
+        }
+        @media screen and (max-width: 600px) {
+            max-width: 100%;
+        }
+        .block {
+            position: relative;
+            background: url(../img/rect-1.png) no-repeat center;
+            background-size: contain;
+            align-self: flex-end;
+            height: 132px;
+            width: 489px;
+            display: grid;
+            place-items: center;
+            font-family: "Junegull";
+            letter-spacing: .75px;
+
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                background-size: 100% 100%;
+                height: fit-content;
+                padding: 2.4rem 1rem 2rem;
+            }
+
+            &:first-child {
+                align-self: flex-start;
+                transform: rotateY(180deg);
+                position: relative;
+
+                p,
+                #scene2 {
+                    transform: rotateY(180deg);
+                }
+                #scene2 {
+                    position: absolute;
+                    left: 70% !important;
+                    top: -15%;
+                    @media screen and (max-width: 600px) {
+                        right: -33px !important;
+                        left: auto !important;
+                        top: -51px;
+                    }
+                    .alien {
+                        background: url(../img/alien.png) no-repeat center;
+                        background-size: contain;
+                        width: 246px;
+                        height: 232px;
+                        @media screen and (max-width: 1000px) {
+                            zoom: 0.8;
+                        }
+                        @media screen and (max-width: 600px) {
+                            width: 160px;
+                            height: 160px;
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                position: relative;
+                #scene3 {
+                    position: absolute !important;
+                    right: -50px !important;
+                    top: -100px;
+                    @media screen and (max-width: 1000px) {
+                        top: -50px;
+                    }
+                    @media screen and (max-width: 600px) {
+                        right: -30px !important;
+                    }
+                    .alien {
+                        background: url(../img/pack-tresnutye.png) no-repeat center;
+                        background-size: contain;
+                        width: 250px;
+                        height: 250px;
+                        @media screen and (max-width: 1000px) {
+                            zoom: 0.8;
+                        }
+                        @media screen and (max-width: 600px) {
+                            zoom: 1;
+                            width: 150px;
+                            height: 106px;
+                        }
+                    }
+                }
+                @media screen and (max-width: 600px) {
+                    & + a {
+                        width: fit-content;
+                        margin: 2rem auto 0;
+                        max-width: 100% !important;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+    .inside-content {
+        width: 100%;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 170%;
+            left: 0;
+            top: -25%;
+            clip-path: polygon(0 15%, 100% 0, 100% 95%, 0 86%);
+            background: #4f0267;
+            box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.15), inset 0px 1px 1px rgba(255, 255, 255, 0.15);
+            @media screen and (max-width: 780px) {
+                clip-path: polygon(0 5%, 100% 0, 100% 85%, 0 80%);
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: -3%;
+            top: -198px;
+            width: 32%;
+            height: 298px;
+            background: url(../img/after-mechanics.png) no-repeat;
+            background-position: left center;
+            background-size: contain;
+            @media screen and (max-width: 1400px) {
+                zoom: 0.8;
+            }
+            @media screen and (max-width: 1300px) {
+                zoom: 0.65;
+            }
+            @media screen and (max-width: 1100px) {
+                zoom: 0.5;
+                top: -310px;
+            }
+        }
+        > * {
+            position: relative;
+        }
+    }
+    .inside {
+        position: relative;
+        place-items: center;
+        grid-auto-flow: column;
+        font-family: "Junegull";
+        color: #fff;
+        max-width: 1000px;
+        margin: auto;
+        @media (max-width: 780px) {
+            grid-template-rows: repeat(3, auto);
+            grid-template-columns: repeat(5, auto);
+            .pack {
+                grid-area: 1 / 1 / 1 / 6;
+                & + div {
+                    grid-area: 2 / 1 / 2 / 6;
+                }
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            right: -7%;
+            top: 50%;
+            background: url(../img/after-inside.png) no-repeat center;
+            background-size: contain;
+            width: 62px;
+            height: 57px;
+            @media screen and (max-width: 1100px) {
+                zoom: 0.7;
+            }
+        }
+        div {
+            position: relative;
+            height: 100%;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: 500px) {
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                position: absolute;
+                bottom: 0;
+                font-size: initial;
+                font-weight: 500;
+                @media (max-width: 500px) {
+                    font-size: 0.9rem;
+                }
+            }
+            &:nth-child(even) {
+                height: fit-content;
+            }
+            &:nth-child(6) {
+                @media (max-width: 400px) {
+                    //grid-area: 4 / 1 / 4 / 2;
+                }
+            }
+            &:nth-child(odd) {
+                @media (max-width: 780px) {
+                    padding-bottom: 3rem;
+                }
+            }
+            &.toy {
+                img {
+                    max-width: 185px;
+                    filter: drop-shadow(0px 9px 11px rgba(0, 0, 0, 0.17));
+                    transform: rotate(10.84deg);
+                    @media (max-width: 900px) {
+                        max-width: 155px;
+                    }
+                    @media (max-width: 500px) {
+                        max-width: 60px;
+                        margin-right: -15px;
+                        margin-top: 2rem;
+                    }
+                }
+            }
+            &.sticker {
+                img {
+                    max-width: 160px;
+                    filter: drop-shadow(0px 9px 11px rgba(0, 0, 0, 0.17));
+                    transform: rotate(11.63deg);
+                    @media (max-width: 900px) {
+                        max-width: 130px;
+                    }
+                    @media (max-width: 500px) {
+                        max-width: 50px;
+                        margin-top: 2.5rem;
+                    }
+                    @media (max-width: 400px) {
+                        grid-area: 4 / 2;
+                    }
+                }
+            }
+            &.pack {
+                @media (max-width: 780px) {
+                    padding-bottom: 0;
+                }
+                img {
+                    max-width: 280px;
+                    @media (max-width: 900px) {
+                        max-width: 250px;
+                    }
+                    @media (max-width: 500px) {
+                        max-width: 200px;
+                    }
+                }
+            }
+            &.tresnutyi {
+                img {
+                    max-width: 280px;
+                    filter: drop-shadow(0px 9px 11px rgba(0, 0, 0, 0.17));
+                    transform: rotate(-7.59deg);
+                    @media (max-width: 900px) {
+                        max-width: 250px;
+                    }
+                    @media (max-width: 500px) {
+                        max-width: 90px;
+                        margin-top: 2rem;
+                    }
+                }
+                &::after {
+                    right: -35%;
+                    @media screen and (max-width: 1070px) {
+                        right: -25%;
+                    }
+                }
+            }
+        }
+    }
+}

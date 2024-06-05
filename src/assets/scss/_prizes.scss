@@ -1,0 +1,146 @@
+.prizes {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -5%;
+        width: 100%;
+        height: 110%;
+        background: #FF9A03;
+        opacity: 0.7;
+        box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.15), inset 0px 1px 1px rgba(255, 255, 255, 0.15);
+        clip-path: polygon(0 18%, 100% 0%, 100% 100%, 0 91%);
+    }
+    .container {
+        position: relative;
+
+        .slick-slider{
+            @media screen and (max-width: 780px){
+                display: none;
+            }
+        }
+        .slick-list {
+            padding: 2rem 0;
+        }
+        .slick-slide {
+            @media screen and (min-width: 780px) {
+                &:nth-child(odd) {
+                    position: relative;
+                    top: -1rem;
+                }
+            }
+            > div {
+                position: relative;
+                width: 95%;
+                margin: auto;
+            }
+        }
+        .modal {
+            font-family: "Ubuntu";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 0.9rem;
+            position: absolute;
+            max-width: 90%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            bottom: 10%;
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                font-weight: bold;
+                font-family: "Junegull";
+                width: 2rem;
+                height: 2rem;
+                color: #fff;
+                display: grid;
+                place-items: center;
+                border-radius: 50%;
+                top: -1rem;
+                left: -1rem;
+                background: rgba(255, 179, 55, 0.1);
+                border: 0.3px solid rgba(255, 179, 55, 0.11);
+                box-sizing: border-box;
+                z-index: 45;
+            }
+            &::after {
+                background: url(../img/prizes/i.png) no-repeat center, linear-gradient(180deg, #ffb337 0%, #ff8038 100%);
+                background-position: center;
+                box-shadow: inset 0px 1px 4px rgba(255, 255, 255, 0.18), inset 0px -10px 10px #ff6a15;
+                z-index: 50;
+            }
+        }
+        .prize-block {
+            width: 100%;
+            height: 0;
+            padding-bottom: 166%;
+            position: relative;
+            .content {
+                top: 0;
+            }
+            h4 {
+                font-family: "Ubuntu";
+                font-style: normal;
+                font-weight: bold;
+                font-size: 1rem;
+                line-height: 1.4;
+                position: absolute;
+                width: 80%;
+                bottom: 5rem;
+                left: 0;
+                right: 0;
+                margin: auto;
+                @media screen and (max-width: 500px){
+                    bottom: 4rem;
+                }
+            }
+            .img-container {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: 1rem;
+
+            }
+            .data-container {
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: auto;
+                height: auto;
+                object-fit: contain;
+            }
+            a {
+                position: absolute;
+                bottom: 2rem;
+                margin: auto;
+                width: fit-content;
+                left: 0;
+                right: 0;
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+    .block{
+        &.mobile{
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            .prize-block{
+                width: 218px;
+                flex-shrink: 0;
+                padding-bottom: 0;
+                height: 362px;
+                margin-left: 1rem;
+            }
+        }
+    }
+}

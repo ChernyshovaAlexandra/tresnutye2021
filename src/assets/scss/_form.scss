@@ -1,0 +1,833 @@
+$checkbox-height: 36px;
+$duration: 0.4s;
+
+.modalBox {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background: url(../img/bg-form.jpeg) no-repeat center;
+  background-size: cover;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.video-container {
+    width: calc((100vh - 9rem) / 16 * 9);
+    max-width: 90vw;
+    min-height: unset;
+    left: 0;
+    right: 0;
+    top: 8rem;
+    margin: auto;
+    background: #000;
+    border-radius: 10px;
+  }
+  .lil-btn {
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    font-family: "Junegull";
+    font-size: 2rem;
+    position: absolute;
+    right: 1px;
+    top: -6px;
+    bottom: 0;
+    margin: auto;
+  }
+  .systemMessage {
+    color: #98735e;
+  }
+
+  .MuiFormControl-root {
+    width: 100%;
+    min-width: 0;
+  }
+  .MuiFormHelperText-root {
+    font-family: "Ubuntu";
+    letter-spacing: 0;
+  }
+
+  @media screen and (max-width: 992px) {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: block;
+    background: #fff;
+    &.video-container {
+      background: #000;
+    }
+    &__container {
+      box-shadow: none !important;
+      background: transparent !important;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    form input,
+    form label,
+    .MuiFormHelperText-root {
+      font-size: 0.85rem !important;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        -webkit-appearance: none;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $orange;
+      }
+    }
+    h2 {
+      @media screen and (max-width: 501px) {
+        font-size: 4vw !important;
+      }
+
+      @media screen and (max-width: 401px) {
+        font-size: 6vw !important;
+      }
+    }
+    .shop h2 {
+      @media screen and (max-width: 501px) {
+        font-size: 6vw !important;
+      }
+    }
+  }
+
+  span.orange {
+    color: $orange;
+  }
+
+  .desktop-only {
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  .politics {
+    margin-top: 2rem;
+    flex-wrap: nowrap;
+    padding-left: 1rem;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    grid-gap: 20px;
+
+    input {
+      position: absolute;
+      left: -99999px;
+    }
+
+    @media screen and (max-width: 992px) {
+      padding-left: 36px;
+
+      input {
+        width: 3rem;
+      }
+    }
+  }
+
+  a.btnLink {
+    text-decoration: underline;
+    text-underline-position: under;
+    font-family: inherit;
+    font-size: inherit;
+    display: inline;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &.orange {
+      &:hover {
+        color: $orange !important;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__container {
+    max-width: 927px;
+    width: 100%;
+    max-height: 85%;
+    position: relative;
+    margin: auto;
+    box-shadow: 0px 34px 28px rgba(25, 51, 90, 0.1);
+    border-radius: 32px;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: normal;
+    &.phone {
+      max-width: 522px;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% + 20px);
+      left: -10px;
+      top: -30px;
+      height: calc(100% + 60px);
+      border-radius: 3rem;
+      background: #fff;
+      transform: skewY(3deg) skewX(-2deg);
+    }
+    &::before {
+      background: $darkViolet;
+      transform: skewY(-6deg) skewX(4deg);
+    }
+
+    @media screen and (max-width: 1168px) {
+      max-width: 90%;
+    }
+
+    @media screen and (max-width: 992px) {
+      padding: 1rem;
+      max-height: none;
+      top: 4rem;
+    }
+
+    @media screen and (max-width: 501px) {
+      height: 100%;
+      overflow: hidden;
+
+      &__content {
+        height: auto;
+        min-height: 0;
+      }
+    }
+
+    &.shop {
+      @media screen and (max-width: 1168px) {
+        width: auto;
+        .flex {
+          flex-direction: column;
+        }
+        .violet {
+          top: -15rem;
+        }
+      }
+      @media screen and (max-width: 992px) {
+        .violet, .pril1, .pril2 {
+          display: none;
+        }
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+
+    &.phone {
+      width: 745px;
+      @media screen and (max-width: 520px) {
+        width: 100%;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      font-size: 1rem;
+
+      @media screen and (max-width: 992px) {
+        //font-size: 1.3rem;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    @media screen and (max-width: 501px) {
+      border: none;
+      top: 0;
+      max-width: 100%;
+      border-radius: 0;
+    }
+
+    &__content {
+      position: relative;
+      z-index: 20;
+      padding: 2rem;
+
+      @media screen and (max-width: 768px) {
+        min-height: 80vh;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      @media screen and (max-width: 501px) {
+        padding: 2rem 1.5rem;
+        min-height: 100%;
+        padding-bottom: 0;
+        height: auto;
+        // overflow-y: auto;
+
+        &::-webkit-scrollbar,
+        &::-webkit-scrollbar-track,
+        &::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          -webkit-appearance: none;
+        }
+
+        &::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $orange;
+        }
+      }
+
+      @media screen and (max-height: 360px) {
+        max-height: calc(65vh);
+      }
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  .changing-data {
+    font-size: 1.2rem;
+
+    b {
+      font-weight: bold;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .editing-for-mob {
+      > .row {
+        .userAccount__check {
+          h2 {
+            //margin: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .edit {
+    .col-lg-auto {
+      &.mob-only {
+        display: none;
+      }
+
+      @media screen and (max-width: 992px) {
+        .btn {
+          width: 100% !important;
+          //margin: auto;
+        }
+
+        &.mob-only {
+          display: block;
+        }
+      }
+    }
+  }
+}
+form {
+  svg {
+    width: 2rem !important;
+    height: 2rem !important;
+    path {
+      fill: #520084;
+    }
+  }
+}
+.check-box > input + label {
+  height: $checkbox-height;
+  width: $checkbox-height;
+  background-color: transparent;
+  border: $checkbox-height * 0.1 solid $violet;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: border-color ease $duration/2;
+  -o-transition: border-color ease $duration/2;
+  -webkit-transition: border-color ease $duration/2;
+  transition: border-color ease $duration/2;
+  cursor: pointer;
+  margin-right: 1rem;
+
+  &::before,
+  &::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0;
+    width: $checkbox-height * 0.2;
+    background-color: $violet;
+    display: inline-block;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-radius: 5px;
+    content: " ";
+    -webkit-transition: opacity ease 0.5;
+    -moz-transition: opacity ease 0.5;
+    transition: opacity ease 0.5;
+    display: none;
+  }
+
+  &::before {
+    top: $checkbox-height * 0.72;
+    left: $checkbox-height * 0.41;
+    box-shadow: 0 0 0 $checkbox-height * 0.05 #fff;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+
+  &::after {
+    top: $checkbox-height * 0.37;
+    left: $checkbox-height * 0.05;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  @media screen and (max-width: 768px) {
+    + p {
+      display: block;
+      max-width: 80%;
+      font-size: 1rem;
+    }
+  }
+}
+input[type="file"] {
+  position: absolute;
+  left: -9999999px;
+  & + label {
+    position: absolute;
+    background: #ffffff;
+    border: 2px solid #e5e3f4;
+    padding: 1rem 20px;
+    border-radius: 47px !important;
+    color: #520084;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+    }
+  }
+}
+input[type="checkbox"]:checked + .check-box,
+.check-box.checked {
+  &::after {
+    display: block;
+    height: $checkbox-height * 0.5;
+    animation: dothabottomcheck $duration/2 ease 0s forwards;
+  }
+
+  &::before {
+    display: block;
+    height: $checkbox-height;
+
+    animation: dothatopcheck $duration ease 0s forwards;
+  }
+}
+
+.userAccount {
+  .info {
+    max-width: 65%;
+    @media screen and (max-width: 992px) {
+      max-width: 90%;
+    }
+  }
+
+  .inner {
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  header + div {
+    max-height: 32vh;
+    height: fit-content;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $orange;
+    }
+    @media screen and (max-height: 992px) {
+      max-height: 50vh;
+    }
+
+    @media screen and (max-height: 360px) {
+      max-height: 35vh;
+    }
+
+    @media screen and (max-width: 768px) {
+      max-height: 57vh;
+    }
+
+    @media screen and (max-width: 501px) {
+      max-height: 75vh;
+
+      .btnContainer {
+        margin: 1rem 0 0 !important;
+      }
+    }
+  }
+
+  @media screen and (max-height: 731px) {
+    overflow-x: hidden;
+
+    &__check {
+      margin-top: 1rem !important;
+    }
+
+    .editing-for-mob {
+      .col-lg-auto {
+        &:nth-child(2) {
+          .btnContainer {
+            margin-top: 0 !important;
+
+            @media screen and (max-width: 501px) {
+              margin: 1rem 0 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btnContainer {
+    margin-top: 1rem !important;
+  }
+
+  .animate__animated {
+    animation-duration: 0.5s;
+  }
+
+  @media screen and (max-width: 992px) {
+    .editing-for-mob {
+      margin-top: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 501px) {
+    h2 {
+      font-size: 7vw !important;
+      margin-top: 3rem !important;
+    }
+  }
+
+  &__check {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.13);
+
+    .navigation-form {
+      cursor: pointer;
+
+      h2 {
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        h2 {
+          color: $orange !important;
+        }
+      }
+    }
+
+    @media screen and (max-width: 501px) {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1rem;
+
+      h2 {
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  .check-table {
+    width: 97%;
+
+    &__row {
+      display: grid;
+      grid-template-columns: 0.5fr 1fr 1.2fr 1fr;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 0.3rem 0;
+      border: 1px solid rgba($orange, 0.5);
+
+      &:hover {
+        background: rgba($green, 0.2);
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .systemMessage {
+          margin: 0 !important;
+          width: fit-content;
+          margin: auto;
+        }
+
+        &.weeklyPrize {
+          img {
+            margin: 0;
+          }
+        }
+      }
+
+      .prize {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Cunia";
+        color: #e12d2e;
+
+        img {
+          max-height: 2rem;
+          max-width: 2rem;
+          margin-left: 10px;
+          filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.3));
+        }
+
+        &.small {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: rgb(0, 87, 255);
+          position: relative;
+          top: 3px;
+
+          img {
+            max-height: 1rem;
+            max-width: 1rem;
+            margin-left: 5px;
+          }
+
+          @media screen and (max-width: 501px) {
+            span {
+              display: none;
+            }
+
+            img {
+              margin-left: 0px;
+            }
+          }
+        }
+
+        &.ended {
+          color: black;
+          font-family: "Ubuntu";
+
+          img {
+            margin: 0 5px;
+          }
+        }
+      }
+
+      .date {
+        text-align: left;
+
+        b {
+          font-weight: bold;
+        }
+      }
+
+      @media screen and (max-width: 501px) {
+        grid-template-columns: 0.5fr 1.5fr 1.5fr 1fr;
+
+        font-size: 11px !important;
+
+        .systemMessage {
+          font-size: 11px !important;
+        }
+      }
+
+      @media screen and (max-width: 330px) {
+        font-size: 10px !important;
+
+        .systemMessage {
+          font-size: 10px !important;
+        }
+      }
+    }
+
+    &__header {
+      display: grid;
+      border: none;
+      font-weight: 600;
+      text-align: center;
+
+      &:hover {
+        background: none;
+        cursor: default;
+      }
+
+      .date {
+        text-align: left;
+      }
+    }
+
+    &__column {
+      padding: 1rem;
+    }
+  }
+}
+
+.close-btn__container {
+  z-index: 100;
+}
+
+.close-btn {
+  width: 24px;
+  height: 24px;
+  transition: all 0.2s;
+  filter: drop-shadow(0px 2px 2px rgba(92, 43, 15, 0.25));
+  background: $darkViolet;
+  border-radius: 5px;
+  &:hover {
+    filter: none;
+    transition: all 0.2s;
+    background: $violet;
+  }
+
+  &__container {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  span {
+    width: 60%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+.errorMessage {
+  color: red;
+  font-family: "Ubuntu";
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.overflow-y-auto {
+  &::-webkit-scrollbar {
+    position: relative;
+    width: 5px;
+    right: 10px;
+  }
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (display: flow-root) {
+    .modalBox__container {
+      &::after {
+        background-position: 0 0;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.MuiPopover-root {
+  z-index: 9999999 !important;
+}
+form {
+  .w-full.file {
+    @media screen and (max-width:1024px) {
+      height: fit-content;
+      min-height: 3.5rem;
+    }
+  }
+}
+input {
+  &.error.w-full {
+    border-color: red;
+  }
+}
+.acc-slider {
+  .slick-track {
+    width: 100% !important;
+  }
+}

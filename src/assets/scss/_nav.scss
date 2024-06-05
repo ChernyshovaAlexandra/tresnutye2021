@@ -1,0 +1,156 @@
+.menu {
+    font-family: "Junegull";
+
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        right: -70px;
+        top: -1rem;
+        display: block;
+        width: 140px;
+        height: 140px;
+        background: url("../img/before-menu.png") no-repeat top;
+        background-size: contain;
+    }
+    li {
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        &:last-child {
+            img {
+                position: relative;
+                z-index: 1000000;
+            }
+        }
+        a {
+            padding: 1rem;
+        }
+    }
+    @media screen and (max-width: 1250px) {
+        font-size: 0.8rem;
+        align-items: center;
+    }
+}
+nav {
+    z-index: 1000;
+    .container:not(.change-shop), .new-shop {
+        background: linear-gradient(180deg, #180d38 41.67%, #110928 100%);
+        box-shadow: inset 0px 8px 10px rgba(91, 38, 121, 0.25);
+        border-radius: 4rem;
+        .logo {
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            cursor: pointer;
+        }
+        .arrow {
+          flex-shrink: 0;
+          margin-right: 1rem;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          position: relative;
+          img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+    }
+    /*@media screen and (max-width: 1380px) {
+      .menu {
+          li {
+              a {
+                  font-size: 0.9rem;
+                  padding: 1rem;
+              }
+          }
+      }
+    }*/
+    @media screen and (max-width: 1250px) {
+        .logo {
+            max-width: 10rem;
+            display: grid;
+            place-items: center;
+            &.m {
+              max-width: 15rem;
+            }
+        }
+    }
+    @media screen and (max-width: 1150px) {
+        .menu {
+            li {
+                a {
+                    font-size: 0.9rem;
+                    padding: 0.5rem;
+                }
+                &.account {
+                  margin: 0 0.5rem;
+                }
+            }
+        }
+    }
+    .burger {
+        height: 4rem;
+        width: 4.5rem;
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(180deg, #180d38 41.67%, #110928 100%);
+        box-shadow: inset 0px 8px 10px rgba(91, 38, 121, 0.25);
+        border-radius: 1rem;
+        & + li {
+            position: relative;
+            z-index: 900;
+        }
+        &-menu {
+            background: url(../img/menu-bg.jpg) no-repeat center;
+            background-size: cover;
+            font-family: "Junegull";
+        }
+        span {
+            width: 2.5rem;
+            height: 3px;
+            position: absolute;
+            background: $yellow;
+            transition: all 0.1s ease-in-out;
+            transform-origin: 50% 50%;
+
+            &:nth-child(1) {
+                top: 1rem;
+            }
+            &:nth-child(2) {
+                bottom: 1rem;
+                top: 1rem;
+                margin: auto;
+            }
+            &:nth-child(3) {
+                bottom: 1rem;
+            }
+        }
+        &.cancel {
+            span {
+                transition: all 0.4s ease-in-out;
+                transform-origin: 50% 50%;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}

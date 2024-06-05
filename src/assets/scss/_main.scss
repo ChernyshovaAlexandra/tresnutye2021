@@ -1,0 +1,229 @@
+.main {
+    height: 0;
+    padding-bottom: 61.5%;
+    position: relative;
+    width: 1438px;
+    max-width: 100%;
+    margin: auto;
+    @media screen and (max-width: 800px) {
+        padding-bottom: 78.7%;
+    }
+
+    @media screen and (min-width: 1439px) {
+        padding-bottom: 884px;
+    }
+    @media screen and (max-width: 560px) {
+        padding-bottom: 86.7%;
+    }
+    @media screen and (max-width: 380px) {
+        padding-bottom: 100%;
+    }
+    .clouds {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 120%;
+        background: url(../img/nebula-clouds.png) repeat-x;
+        background-size: cover;
+        opacity: 0.5;
+        background-position: center bottom;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 8%;
+        height: 52.21%;
+        width: 84.5%;
+        background: url(../img/main-fly.png) no-repeat center;
+        background-size: contain;
+        top: 65.9%;
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    #comets-svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
+        .comet {
+            &-1 {
+                animation: comet1 5s ease-out infinite both;
+            }
+            &-2 {
+                animation: comet2 5s ease-out infinite both;
+                animation-delay: 2s;
+            }
+            &-3 {
+                animation: comet3 5s ease-out infinite both;
+                animation-delay: 3.5s;
+            }
+            &-4 {
+                animation: comet4 5s ease-out infinite both;
+                animation-delay: 5s;
+            }
+        }
+    }
+    #nebula {
+        position: absolute;
+        transform-style: preserve-3d;
+        bottom: -10%;
+        left: 0;
+        width: 72.3%;
+        height: 39.9%;
+        transform: rotate(12.69deg);
+        background: url(../img/nebula-new.png) no-repeat center;
+        background-size: contain;
+        .layer {
+            transform-style: preserve-3d;
+        }
+        @media screen and (max-width: 800px) {
+            bottom: -25%;
+        }
+    }
+    .header {
+        position: absolute;
+        width: 78.7%;
+        height: 47.9%;
+        top: 22.3%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 30;
+        @media screen and (max-width: 801px) {
+            top: 19.3%;
+        }
+        @media screen and (max-width: 680px) {
+            width: 100%;
+            top: 25%;
+        }
+        @media screen and (max-width: 430px) {
+            top: 30%;
+        }
+        @media screen and (max-width: 380px) {
+            top: 25%;
+        }
+        &-text {
+            background: url(../img/mainImg1.png) no-repeat;
+            background-position: -50% 120%;
+            background-size: 90%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            @media screen and (max-width: 801px) {
+                top: -20%;
+                left: 5%;
+            }
+            @media screen and (max-width: 680px) {
+                top: -15%;
+            }
+        }
+        &-rocket {
+            background: url(../img/mainImg2.png) no-repeat;
+            background-size: contain;
+            width: 80%;
+            height: 100%;
+            position: absolute;
+            bottom: -15%;
+            right: -12%;
+            @media screen and (max-width: 991px) {
+                right: -17%;
+            }
+            @media screen and (max-width: 801px) {
+                right: 10%;
+                bottom: -27%;
+            }
+            @media screen and (max-width: 680px) {
+                right: 8%;
+                bottom: -15%;
+            }
+            @media screen and (max-width: 560px) {
+                right: 12%;
+                bottom: -19.5%;
+            }
+            @media screen and (max-width: 380px) {
+                bottom: -32.5%;
+
+            }
+        }
+    }
+    .description {
+        h2 {
+            position: absolute;
+            left: 25.7%;
+            top: 51.5%;
+            @media screen and (max-width: 950px) {
+                left: 20%;
+            }
+            @media screen and (max-width: 800px) {
+                top: 72%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: fit-content;
+            }
+            @media screen and (max-width: 680px) {
+                top: 77%;
+            }
+            @media screen and (max-width: 560px) {
+                top: 85%;
+            }
+        }
+        h3 {
+            position: absolute;
+            left: 17.5%;
+            top: 57%;
+            font-size: 75%;
+            @media screen and (max-width: 950px) {
+                left: 15%;
+                top: 58%;
+            }
+            @media screen and (max-width: 800px) {
+                top: calc(72% + 2.4rem);
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: fit-content;
+            }
+            @media screen and (max-width: 680px) {
+                top: calc(77% + 2.4rem);
+            }
+            @media screen and (max-width: 560px) {
+                top: calc(85% + 2.4rem);
+            }
+        }
+    }
+    .planet-container {
+        position: absolute;
+        right: -10%;
+        top: 53%;
+        width: 27.3%;
+        height: 38%;
+        z-index: 20;
+        @media screen and (max-width: 800px) {
+            top: 90%;
+        }
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .blink {
+            animation: blinkOpacity 4s ease-in-out infinite alternate;
+            @for $i from 1 through 20 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 0.5s * $i;
+                }
+            }
+        }
+    }
+}

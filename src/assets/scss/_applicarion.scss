@@ -1,0 +1,157 @@
+.application {
+    position: relative;
+    .mob {
+        display: none;
+    }
+    @media screen and (max-width: 780px) {
+        .desktop {
+            display: none;
+        }
+        .mob {
+            display: flex;
+            filter: drop-shadow(0px 2.5px 3px #42006a);
+            @media screen and (max-width: 450px) {
+                flex-direction: column;
+                a {
+                    &:first-child {
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+                    IMG {
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+    &-block {
+        background: url(../img/application-block.png) no-repeat center;
+        background-size: contain;
+        width: 942px;
+        height: 629px;
+        filter: drop-shadow(0px 25px 30px rgba(83, 0, 112, 0.43));
+        @media screen and (max-width: 1100px) {
+            zoom: 0.8;
+        }
+        @media screen and (max-width: 880px) {
+            zoom: 0.6;
+        }
+        @media screen and (max-width: 780px) {
+            background: url(../img/application-block-mob.png) no-repeat center;
+            background-size: 100% 100%;
+            width: 100%;
+            zoom: 1;
+            height: fit-content;
+            .flex {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    .left-col {
+        flex: 65%;
+        // place-self: center;
+        padding: 2rem;
+        @media screen and (max-width: 1100px) {
+            zoom: 1.2;
+        }
+        @media screen and (max-width: 880px) {
+            zoom: 1.4;
+        }
+        @media screen and (max-width: 780px) {
+            zoom: 1;
+        }
+    }
+    .right-col {
+        flex: 35%;
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 300px;
+            transform: matrix(0.82, -0.58, 0.58, 0.82, 0, 0);
+            left: -125px;
+            bottom: 0;
+            background: url(../img/phone-before.png) no-repeat bottom;
+            background-size: contain;
+        }
+        &::before {
+            @media screen and (max-width:780px) {
+                left: -50px;
+                width: 35%;
+            }
+            @media screen and (max-width: 450px) {
+                display: none;
+            }
+        }
+        &::after {
+            background: url(../img/phone-before2.png) no-repeat bottom;
+            background-size: contain;
+            width: 300px;
+            height: 418px;
+            transform: rotate(21.1deg);
+            bottom: auto;
+            left: auto;
+            right: -99px;
+            top: -158px;
+            z-index: 30;
+            @media screen and (max-width: 780px) {
+                width: 50%;
+                right: -80px;
+                top: -370px;
+            }
+            @media screen and (max-width: 450px) {
+                display: none;
+            }
+        }
+    }
+    .qr {
+        width: 50%;
+        height: 0;
+        padding-bottom: 50%;
+        background: url(../img/qr.jpg) no-repeat center;
+        background-size: cover;
+        filter: drop-shadow(0px 25px 30px #42006a);
+        border-radius: 1rem;
+    }
+    .phoneframe {
+        overflow: hidden;
+        width: 296px;
+        z-index: 40;
+        height: 607px;
+        border: 10px solid black;
+        background: #fff;
+        border-radius: 3rem;
+        position: relative;
+        top: -50px;
+        filter: drop-shadow(11px 25px 30px rgba(66, 0, 106, 0.7));
+        img {
+            position: absolute;
+            top: 0%;
+            height: 100%;
+            width: auto;
+            transform: scaleY(1.2);
+        }
+        @media screen and (max-width: 780px) {
+            margin: auto;
+            margin-top: -5rem;
+        }
+        @media screen and (max-width: 450px) {
+            zoom: 0.95;
+            top: 0;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 151px;
+            height: 22.7px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: url(../img/Eyebrow.png) no-repeat top;
+            background-size: contain;
+            top: 0;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+$orange: #ff8200;
+$green: #78be20;
+
+@font-face {
+    font-family: "Golos";
+    src: url("../fonts/Golos/Golos-Text_Black.ttf");
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Golos";
+    src: url("../fonts/Golos/Golos-Text_Regular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Junegull";
+    src: url("../fonts/Junegull.otf");
+    font-weight: 400;
+}
+$main-bg: #ef7d00;
+$orange__hover: #ff3300;
+$orange__bg: #ff9933;
+$shadow: rgba(60, 65, 79, 0.25);
+$gradient: linear-gradient(180deg, #ff9118 0%, #ff6600 100%);
+$gradient__hover: linear-gradient(180deg, #ff6600 0%, #ff9118 100%);
+$gradient__background: linear-gradient(180deg, #ff7316 0%, #ff4d00 100%);
+$gradient__background__hover: linear-gradient(180deg, #ff3300 0%, #ff7316 100%);
+$blue: #e9f4ff;
+$checked-color: #34b93d;
+$yellow: #ffd700;
+$violet: #7400bb;
+$darkViolet: #520084;
+$red: #dd3702;
+// $green:#578b4e;

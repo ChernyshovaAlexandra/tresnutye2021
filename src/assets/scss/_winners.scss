@@ -1,0 +1,116 @@
+.winners {
+    background: #2c0046;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -70px;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+        background: #2c0046;
+    }
+    > * {
+        position: relative;
+        z-index: 30;
+    }
+    &-content {
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background: url(../img/winners-1.png) no-repeat center;
+            background-size: contain;
+            height: 0;
+            width: 15rem;
+            padding-bottom: 20.5rem;
+            left: 2rem;
+            top: -10rem;
+            transform: rotate(-16deg);
+        }
+        &::after {
+            background: url(../img/winners-2.png) no-repeat center;
+            background-size: contain;
+            left: auto;
+            right: 2rem;
+            bottom: -1rem;
+            top: auto;
+            transform: rotate(26.3deg);
+            width: 10rem;
+            padding-bottom: 15rem;
+        }
+        &-inner {
+            position: relative;
+            min-height: 200px;
+            max-width: 1000px;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                transform: skew(3deg, 0deg) rotate(1deg);
+                border-radius: 2rem;
+                z-index: 20;
+            }
+            &::before {
+                background: $yellow;
+                height: 110%;
+                width: 95%;
+                top: -5%;
+                transform: skew(-3deg, -1deg) rotate(-1deg);
+            }
+        }
+    }
+    .slick-slide {
+        @media screen and (max-width: 780px) {
+            display: grid;
+            place-items: center;
+            margin: auto;
+            div {
+                width: fit-content;
+                p {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
+.slick-btn-prev,
+.slick-btn-next {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 30%;
+        height: 30%;
+        background: url(../img/btn-arr.png) no-repeat center;
+        background-size: contain;
+        margin: auto;
+    }
+}
+.slick-btn-next {
+    right: -3.5rem;
+}
+.slick-btn-prev {
+    left: -3.5rem;
+    &::after {
+        transform: rotateY(180deg);
+    }
+}

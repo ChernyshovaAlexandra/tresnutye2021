@@ -1,0 +1,96 @@
+.units {
+    // background: #bd208d;
+    min-height: 30vh;
+    > .container {
+        &:first-child {
+            min-height: 500px;
+        }
+    }
+    canvas {
+        max-width: 110%;
+        height: auto !important;
+    }
+    .container {
+        position: relative;
+
+        &.after {
+            &::after {
+                content: "";
+                position: absolute;
+                background: url(../img/cometa2.png) no-repeat center;
+                background-size: contain;
+                width: 200px;
+                height: 200px;
+                right: -50px;
+                bottom: -10px;
+            }
+        }
+        .cover {
+          position: absolute;
+          top: 0;
+          height: 70%;
+          width: 100%;
+          z-index: 100;
+        }
+
+    }
+    .catalog {
+        background: url(../img/catalog.png) no-repeat center;
+        background-size: contain;
+        min-height: 500px;
+        min-width: 644px;
+        width: 100%;
+        background-position: right center;
+        position: relative;
+        top: -100px;
+        @media screen and (max-width: 1350px) {
+            min-height: 400px;
+            min-width: 0;
+        }
+        @media screen and (max-width: 1100px) {
+            top: -50px;
+        }
+        @media screen and (max-width: 768px) {
+            background-position: center bottom;
+            margin-top: 4rem;
+        }
+        @media screen and (max-width: 430px) {
+            min-height: 320px;
+        }
+    }
+    .stickers {
+        position: relative;
+        &::before {
+            content: "В каждом журнале есть стикерпак с треснутыми";
+            position: absolute;
+            left: -110px;
+            width: 260px;
+            height: auto;
+            display: block;
+            top: 80%;
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.4;
+            @media screen and (max-width: 768px) {
+                left: 0;
+            }
+            @media screen and (max-width: 490px) {
+                font-size: 18px;
+            }
+            @media screen and (max-width: 430px) {
+                font-size: 15px;
+                width: 230px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            width: fit-content;
+            max-width: 100%;
+            img {
+                position: relative;
+                right: -100px;
+                max-width: calc(100% - 100px);
+                display: block;
+            }
+        }
+    }
+}
